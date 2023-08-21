@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --primary-color: #3eb25e;
+  --secondary-color: #ffff7d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-size: 62.5%; /* Change the default px value in rem from 16px to 10px */
+}
+
+body {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+p,
+span {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
