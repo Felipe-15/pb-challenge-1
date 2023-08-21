@@ -1,0 +1,13 @@
+@media screen and (min-width: 780px) {
+  .main-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .standard-image {
+    max-width: 440px;
+  }
+
+  .buttons-container {
+    max-width: 440px;
+  }
+}
