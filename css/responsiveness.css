@@ -10,4 +10,8 @@
   .buttons-container {
     max-width: 440px;
   }
+
+  .button--small {
+    font-size: 2.2rem;
+  }
 }
