@@ -1,0 +1,54 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  justify-items: center;
+  align-items: center;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+.button {
+  width: 100%;
+  max-width: 200px;
+
+  text-align: center;
+  font-size: 2.2rem;
+  color: white;
+  font-weight: 700;
+
+  background: var(--primary-color);
+
+  border-radius: 9999px;
+
+  padding: 0.4rem 0;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  color: black;
+  background: var(--secondary-color);
+}
+
+.button--small {
+  font-size: 1.5rem;
+}
+
+.standard-image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1.8rem;
+
+  max-width: 300px;
+  width: 100%;
+}
