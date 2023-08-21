@@ -1,0 +1,23 @@
+@import url("mobile.css");
+
+@media screen and (min-width: 780px) {
+  .text-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-container h1 {
+    font-size: 11rem;
+
+    margin-bottom: 3.6rem;
+  }
+
+  .text-container p {
+    margin-bottom: 6.6rem;
+  }
+
+  #zero-step-img {
+    max-width: 360px;
+    width: 100%;
+  }
+}
