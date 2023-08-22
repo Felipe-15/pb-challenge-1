@@ -1,0 +1,59 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+label {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+
+  width: fit-content;
+
+  padding-left: 1rem;
+}
+
+input {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+
+  width: 100%;
+  max-width: 460px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+
+  padding: 0.8rem 1.4rem;
+  margin-top: 0.7rem;
+  margin-bottom: 1.4rem;
+
+  transition: border-color 0.2s ease-in-out;
+}
+
+input:hover {
+  border-color: #475242;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  margin-bottom: 0;
+}
+
+input[type="number"] {
+  width: 110px;
+  margin-bottom: 3.4rem;
+}
+
+/* Removing the 'arrows' from the number input */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
