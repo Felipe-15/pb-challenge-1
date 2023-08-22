@@ -15,8 +15,6 @@
 
   font-size: 1.4rem;
 
-  margin-bottom: 2.3rem;
-
   transition: border-color 0.2s ease-in-out;
 }
 
@@ -24,3 +22,14 @@
   border-color: #475242;
 }
 
+small {
+  display: block;
+  margin-bottom: 1.3rem;
+
+  padding-top: 1rem;
+  padding-left: 1rem;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.25);
+}
