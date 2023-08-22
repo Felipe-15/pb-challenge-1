@@ -1,11 +1,28 @@
 @import url("mobile.css");
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 769px) {
   .text-container {
     justify-content: center;
-    max-width: 440px;
+
+    width: fit-content;
+    max-width: 450px;
+
+    margin-right: auto;
+
+    padding-right: 1rem;
   }
 
   .text-container h1 {
+    font-size: 3.9rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .text-container p {
+    margin-bottom: 6.5rem;
+    font-size: 2.8rem;
+  }
+
+  .main-container {
+    --gap-amount: 8rem;
   }
 }
