@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.content-container select {
+.custom-select {
   position: relative;
   margin-bottom: 1rem;
 
@@ -43,7 +43,7 @@
   transition: border-color 0.2s ease-in-out;
 }
 
-.content-container select:hover {
+.custom-select:hover {
   border-color: #475242;
 }
 
@@ -59,15 +59,15 @@
   transition: fill-opacity 0.2s ease-in-out;
 }
 
-select:hover + .custom-arrow path {
+.custom-select:hover + .custom-arrow path {
   fill-opacity: 1;
 }
 
-select:focus + .custom-arrow {
+.custom-select:focus + .custom-arrow {
   transform: rotate(180deg);
 }
 
-.content-container select > option {
+.custom-select > option {
   font-family: "Roboto", sans-serif;
 }
 
