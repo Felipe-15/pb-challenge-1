@@ -1,0 +1,7 @@
+.main-container {
+  --gap-amount: 1.6rem;
+}
+
+h2 + div {
+  position: relative;
+}
