@@ -1,13 +1,97 @@
 .main-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  --gap-amount: 2.8rem;
+  display: flex;
+  flex-direction: column;
 
-  justify-items: center;
+  justify-content: center;
   align-items: center;
 
-  max-width: 1200px;
+  gap: var(--gap-amount);
 
-  margin: 0 auto;
+  max-width: 95vw;
+
+  margin: auto;
+}
+
+.content-container {
+  --max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+.content-container select {
+  position: relative;
+  margin-bottom: 1rem;
+
+  appearance: none;
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+
+  max-width: 300px;
+  width: 100%;
+
+  padding: 0.8rem 0;
+  padding-left: 2.8rem;
+
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+
+  transition: border-color 0.2s ease-in-out;
+}
+
+.content-container select:hover {
+  border-color: #475242;
+}
+
+.custom-arrow {
+  display: block;
+  position: absolute;
+  left: 1.2rem;
+  top: 1.4rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-arrow path {
+  transition: fill-opacity 0.2s ease-in-out;
+}
+
+select:hover + .custom-arrow path {
+  fill-opacity: 1;
+}
+
+select:focus + .custom-arrow {
+  transform: rotate(180deg);
+}
+
+.content-container select > option {
+  font-family: "Roboto", sans-serif;
+}
+
+.content-container__title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.standard-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.standard-list li {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.standard-list li:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+
+.standard-list li > * {
+  cursor: pointer;
 }
 
 .button {
@@ -19,13 +103,16 @@
   color: white;
   font-weight: 700;
 
+  border: none;
+  cursor: pointer;
+
   background: var(--primary-color);
 
   border-radius: 9999px;
 
   padding: 0.4rem 0;
 
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .button:hover {
@@ -35,11 +122,24 @@
 
 .button--small {
   font-size: 1.5rem;
+  max-width: 140px;
 }
 
-.standard-image {
+.button--big {
+  max-width: 440px;
   width: 100%;
-  max-width: 300px;
+
+  font-size: 1.6rem;
+
+  margin-top: 1.2rem;
+}
+
+.button--disabled,
+.button--disabled:hover {
+  background: rgba(0, 0, 0, 0.25);
+  color: rgba(0, 0, 0, 0.5);
+
+  pointer-events: none;
 }
 
 .buttons-container {
@@ -51,4 +151,9 @@
 
   max-width: 300px;
   width: 100%;
+}
+
+.standard-image {
+  width: 100%;
+  max-width: 300px;
 }
