@@ -2,7 +2,7 @@
   --gap-amount: 2.3rem;
 }
 
-textarea {
+.custom-textarea {
   resize: none;
 
   padding: 1rem;
@@ -19,3 +19,8 @@ textarea {
 
   transition: border-color 0.2s ease-in-out;
 }
+
+.custom-textarea:hover {
+  border-color: #475242;
+}
+

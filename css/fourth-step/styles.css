@@ -5,9 +5,10 @@
     --gap-amount: 9.4rem;
   }
 
-  textarea {
+  .custom-textarea {
     height: 225px;
     font-size: 1.8rem;
+  }
 
     margin-bottom: 6.2rem;
   }
