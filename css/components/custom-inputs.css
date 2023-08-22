@@ -1,0 +1,66 @@
+li > label {
+  padding-left: 2rem;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  cursor: pointer;
+  width: 0px;
+  height: 0px;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 3px;
+  background-color: var(--primary-color);
+
+  top: 0.4rem;
+
+  transition: opacity 0.2s ease-in-out;
+
+  opacity: 0.3;
+}
+
+input[type="checkbox"]:checked:before {
+  opacity: 1;
+}
+
+input[type="checkbox"]:not(:checked):hover::before {
+  opacity: 0.5;
+}
+
+input[type="radio"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+input[type="radio"]:before {
+  position: absolute;
+  content: "";
+  display: block;
+
+  width: 1.5rem;
+  height: 1.5rem;
+
+  top: 0.4rem;
+
+  border-radius: 50%;
+  background-color: var(--primary-color);
+
+  opacity: 0.3;
+
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked:before {
+  opacity: 1;
+}
+
+input[type="radio"]:not(:checked):hover::before {
+  opacity: 0.5;
+}

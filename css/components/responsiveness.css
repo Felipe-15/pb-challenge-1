@@ -76,4 +76,22 @@
     width: 1.2rem;
     height: auto;
   }
+
+  li > label {
+    padding-left: 3.6rem;
+  }
+
+  input[type="radio"]:before {
+    top: 0.4rem;
+
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  input[type="checkbox"]:before {
+    width: 2.6rem;
+    height: 2.6rem;
+
+    top: 0.4rem;
+  }
 }
