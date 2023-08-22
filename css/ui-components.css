@@ -53,13 +53,17 @@
   left: 1.2rem;
   top: 1.4rem;
   transition: transform 0.2s ease-in-out;
+
+  cursor: pointer;
 }
 
 .custom-arrow path {
   transition: fill-opacity 0.2s ease-in-out;
 }
 
-.custom-select:hover + .custom-arrow path {
+.custom-select:hover + .custom-arrow path,
+.custom-arrow:hover,
+.custom-arrow path:hover {
   fill-opacity: 1;
 }
 
