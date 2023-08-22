@@ -1,0 +1,26 @@
+@import url("custom-select.css");
+@import url("containers.css");
+@import url("button.css");
+
+.standard-image {
+  width: 100%;
+  max-width: 300px;
+}
+
+.standard-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.standard-list li {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.standard-list li:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+
+.standard-list li > * {
+  cursor: pointer;
+}
