@@ -1,5 +1,6 @@
-const radioInputs = document.getElementsByName("financialMarket");
+const radioInputs = Array.from(document.getElementsByName("financialMarket"));
 const nextLink = document.getElementById("next-link");
+nextLink === null || nextLink === void 0 ? void 0 : nextLink.addEventListener("click", finishForm);
 radioInputs.forEach((input) => {
     input.addEventListener("change", () => {
         nextLink === null || nextLink === void 0 ? void 0 : nextLink.classList.remove("button--disabled");

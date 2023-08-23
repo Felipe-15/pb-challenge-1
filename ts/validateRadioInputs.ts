@@ -1,6 +1,10 @@
-const radioInputs = document.getElementsByName("financialMarket");
+const radioInputs = Array.from(
+  document.getElementsByName("financialMarket")
+) as HTMLInputElement[];
 
 const nextLink = document.getElementById("next-link");
+
+nextLink?.addEventListener("click", finishForm);
 
 radioInputs.forEach((input) => {
   input.addEventListener("change", () => {
