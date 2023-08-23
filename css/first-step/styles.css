@@ -1,5 +1,11 @@
 @import url("mobile.css");
 
+@media screen and (min-width: 420px) {
+  .text-container {
+    max-width: 340px;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .text-container {
     justify-content: center;

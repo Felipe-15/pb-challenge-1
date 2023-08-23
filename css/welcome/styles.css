@@ -1,5 +1,11 @@
 @import url("mobile.css");
 
+@media screen and (min-width: 420px) {
+  .text-container {
+    width: fit-content;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .text-container {
     justify-content: center;
@@ -20,8 +26,10 @@
   }
 
   #zero-step-img {
-    max-width: 360px;
+    max-width: 400px;
     width: 100%;
+
+    max-height: 95vh;
   }
 }
 

@@ -1,3 +1,17 @@
+@media screen and (min-width: 420px) {
+  .standard-image {
+    max-width: 400px;
+  }
+
+  .content-container {
+    max-width: 340px;
+  }
+
+  .buttons-container {
+    max-width: 340px;
+  }
+}
+
 @media screen and (min-width: 769px) {
   .main-container {
     --gap-amount: 8rem;
@@ -42,7 +56,8 @@
   }
 
   .standard-image {
-    max-width: 500px;
+    max-width: 520px;
+    padding-left: 2rem;
   }
 
   .buttons-container {
