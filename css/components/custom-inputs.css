@@ -64,3 +64,10 @@ input[type="radio"]:checked:before {
 input[type="radio"]:not(:checked):hover::before {
   opacity: 0.5;
 }
+
+/* Ensure that when the "real" checkbox and radio are focused, the pseudo element will be focused too, to preserve the accessibility */
+
+input[type="radio"]:not(:checked):focus:before,
+input[type="checkbox"]:not(:checked):focus:before {
+  outline: auto;
+}
