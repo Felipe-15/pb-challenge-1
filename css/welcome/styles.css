@@ -10,7 +10,7 @@
   }
 
   .text-container h1 {
-    font-size: clamp(5.3rem, 11rem, 20vw);
+    font-size: clamp(5.3rem, 10vw, 11rem);
 
     margin-bottom: 4.4rem;
   }
