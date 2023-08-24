@@ -25,19 +25,19 @@ textarea?.addEventListener("keyup", (e) => {
   let length = textarea.value.length;
   if (!length) {
     nextLink?.classList.add("button--disabled");
-    charCounter.innerHTML = "0/160";
+    charCounter.innerHTML = "0/130";
   } else {
     nextLink?.classList.remove("button--disabled");
   }
 
   length++;
 
-  if (length > 160) {
-    textarea.value = textarea.value.slice(0, 160);
+  if (length > 130) {
+    textarea.value = textarea.value.slice(0, 130);
     return;
   }
 
-  charCounter.innerHTML = `${length - 1}/160`;
+  charCounter.innerHTML = `${length - 1}/130`;
 });
 
 textarea?.addEventListener("keydown", (e) => {
@@ -64,5 +64,5 @@ function recoverTextarea() {
   if (!dataRecovered) return;
 
   textarea.value = dataRecovered.value;
-  charCounter.innerHTML = `${dataRecovered.value.length}/160`;
+  charCounter.innerHTML = `${dataRecovered.value.length}/130`;
 }
