@@ -1,3 +1,6 @@
+import { saveData, recoverData } from "./manageData";
+import { deletePageDataOnSkip } from "./clearDataOnSkip";
+
 const radioInputs = Array.from(
   document.getElementsByName("financialMarket")
 ) as HTMLInputElement[];
@@ -12,19 +15,42 @@ radioInputs.forEach((input) => {
   });
 });
 
-let isMarked = false;
+checkInputRecovered();
+getCheckedInput();
+deletePageDataOnSkip("secondStep");
 
-for (let index = 0; index < radioInputs.length; index++) {
-  if ((radioInputs[index] as HTMLInputElement).checked) {
-    isMarked = true;
-    break;
-  }
+function finishForm(): void {
+  const data = getCheckedInput();
+
+  saveData(data!, "secondStep");
 }
 
-if (isMarked) {
+function getCheckedInput() {
+  let checked;
+  for (let radioInput of radioInputs) {
+    if (radioInput.checked) {
+      checked = { id: radioInput.id, value: radioInput.value };
+      break;
+    }
+  }
+
+  if (!checked) return nextLink?.classList.add("button--disabled");
+
   nextLink?.classList.remove("button--disabled");
-} else {
-  nextLink?.classList.add("button--disabled");
+  return checked;
+}
+
+function checkInputRecovered() {
+  const data = recoverData("secondStep");
+
+  if (!data) return;
+
+  const inputToCheck = radioInputs.filter((radio) => radio.id === data.id)[0];
+
+  if (!inputToCheck) return;
+
+  inputToCheck.checked = true;
+  nextLink?.classList.remove("button--disabled");
 }
 
 export {};
