@@ -27,23 +27,19 @@ textarea === null || textarea === void 0
           ? void 0
           : nextLink.classList.add("button--disabled");
         charCounter.innerHTML = "0/130";
+        return;
       } else {
         nextLink === null || nextLink === void 0
           ? void 0
           : nextLink.classList.remove("button--disabled");
       }
-      length++;
-      if (length > 130) {
-        textarea.value = textarea.value.slice(0, 130);
+      if (length + 1 > 130) {
+        const currentValue = textarea.value.slice(0, 130);
+        textarea.value = currentValue;
+        charCounter.innerHTML = `${currentValue.length}/130`;
         return;
       }
-      charCounter.innerHTML = `${length - 1}/130`;
-    });
-textarea === null || textarea === void 0
-  ? void 0
-  : textarea.addEventListener("keydown", (e) => {
-      if (e.key === "Backspace") {
-      }
+      charCounter.innerHTML = `${length}/130`;
     });
 function finishForm() {
   const data = { value: textarea.value };
