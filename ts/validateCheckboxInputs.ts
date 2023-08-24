@@ -1,4 +1,5 @@
 import { saveData, recoverData } from "./manageData";
+import { getSelectData, setSelectedIndex } from "./checkSelectData";
 import { deletePageDataOnSkip } from "./clearDataOnSkip";
 
 const inputs = Array.from(
@@ -9,7 +10,7 @@ const nextLink = document.getElementById("next-link");
 
 nextLink?.addEventListener("click", finishForm);
 
-getRecoveredCheckboxes();
+getRecoveredData();
 hasSomeChecked();
 deletePageDataOnSkip("thirdStep");
 
@@ -43,17 +44,23 @@ function getMarkedCheckbox(): { id: string; value: string }[] | null {
 }
 
 function finishForm() {
-  const data = getMarkedCheckbox();
+  const checkboxes = getMarkedCheckbox();
 
-  if (!data) return;
+  if (!checkboxes) return;
+
+  const selectedIndex = getSelectData();
+
+  const data = { checkboxes, select: selectedIndex };
 
   saveData(data, "thirdStep");
 }
 
-function getRecoveredCheckboxes() {
-  const data = recoverData("thirdStep");
+function getRecoveredData() {
+  const dataRecovered = recoverData("thirdStep");
 
-  if (!data) return;
+  if (!dataRecovered) return;
+
+  const { checkboxes: data, select } = dataRecovered;
 
   const ids = data.map((input) => input.id);
 
@@ -64,6 +71,8 @@ function getRecoveredCheckboxes() {
       }
     }
   });
+
+  setSelectedIndex(select);
 }
 
 export {};

@@ -1,9 +1,15 @@
 type Survey = {
   secondStep?: {
-    id: string; // Input radio id to find him back
-    value: string;
+    inputRadio: {
+      id: string; // Input radio id to find him back
+      value: string;
+    };
+    select: number;
   };
-  thirdStep?: { value: string; id: string }[]; // Same logic as above in the input radio, but with multiple values because it's checkbox now
+  thirdStep?: {
+    checkboxes: { value: string; id: string }[];
+    select: number;
+  }; // Same logic as above in the input radio, but with multiple values because it's checkbox now
   fourthStep?: {
     value: string;
   };

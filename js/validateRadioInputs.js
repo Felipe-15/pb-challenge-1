@@ -1,5 +1,6 @@
 import { saveData, recoverData } from "./manageData.js";
 import { deletePageDataOnSkip } from "./clearDataOnSkip.js";
+import { getSelectData, setSelectedIndex } from "./checkSelectData.js";
 const radioInputs = Array.from(document.getElementsByName("financialMarket"));
 const nextLink = document.getElementById("next-link");
 nextLink === null || nextLink === void 0
@@ -12,12 +13,19 @@ radioInputs.forEach((input) => {
       : nextLink.classList.remove("button--disabled");
   });
 });
-checkInputRecovered();
+getRecoveredData();
 getCheckedInput();
 deletePageDataOnSkip("secondStep");
 function finishForm() {
-  const data = getCheckedInput();
-  saveData(data, "secondStep");
+  const inputRadio = getCheckedInput();
+  const selectedIndex = getSelectData();
+  saveData(
+    {
+      inputRadio: { value: inputRadio.value, id: inputRadio.id },
+      select: selectedIndex,
+    },
+    "secondStep"
+  );
 }
 function getCheckedInput() {
   let checked;
@@ -36,10 +44,14 @@ function getCheckedInput() {
     : nextLink.classList.remove("button--disabled");
   return checked;
 }
-function checkInputRecovered() {
+function getRecoveredData() {
   const data = recoverData("secondStep");
   if (!data) return;
-  const inputToCheck = radioInputs.filter((radio) => radio.id === data.id)[0];
+  const { inputRadio: recoveredInput, select } = data;
+  setSelectedIndex(select);
+  const inputToCheck = radioInputs.filter(
+    (radio) => radio.id === recoveredInput.id
+  )[0];
   if (!inputToCheck) return;
   inputToCheck.checked = true;
   nextLink === null || nextLink === void 0

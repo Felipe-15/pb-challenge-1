@@ -1,5 +1,6 @@
 import { saveData, recoverData } from "./manageData";
 import { deletePageDataOnSkip } from "./clearDataOnSkip";
+import { getSelectData, setSelectedIndex } from "./checkSelectData";
 
 const radioInputs = Array.from(
   document.getElementsByName("financialMarket")
@@ -15,14 +16,21 @@ radioInputs.forEach((input) => {
   });
 });
 
-checkInputRecovered();
+getRecoveredData();
 getCheckedInput();
 deletePageDataOnSkip("secondStep");
 
 function finishForm(): void {
-  const data = getCheckedInput();
+  const inputRadio = getCheckedInput();
+  const selectedIndex = getSelectData();
 
-  saveData(data!, "secondStep");
+  saveData(
+    {
+      inputRadio: { value: inputRadio!.value, id: inputRadio!.id },
+      select: selectedIndex,
+    },
+    "secondStep"
+  );
 }
 
 function getCheckedInput() {
@@ -40,12 +48,17 @@ function getCheckedInput() {
   return checked;
 }
 
-function checkInputRecovered() {
+function getRecoveredData() {
   const data = recoverData("secondStep");
 
   if (!data) return;
 
-  const inputToCheck = radioInputs.filter((radio) => radio.id === data.id)[0];
+  const { inputRadio: recoveredInput, select } = data;
+  setSelectedIndex(select);
+
+  const inputToCheck = radioInputs.filter(
+    (radio) => radio.id === recoveredInput.id
+  )[0];
 
   if (!inputToCheck) return;
 
