@@ -1,3 +1,7 @@
+.button--big ~ .button--big {
+  margin-top: 1rem;
+}
+
 .input-form {
   display: flex;
   flex-direction: column;

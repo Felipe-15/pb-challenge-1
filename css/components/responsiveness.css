@@ -75,6 +75,7 @@
 
   .button--big {
     max-width: 418px;
+    margin-top: 1.5rem;
   }
 
   .content-container select {
