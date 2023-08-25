@@ -6,7 +6,7 @@
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
 
-  max-width: 300px;
+  max-width: 280px;
   width: 100%;
 
   padding: 0.8rem 0;
@@ -16,6 +16,8 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
 
   cursor: pointer;
+
+  text-overflow: ellipsis;
 
   transition: border-color 0.2s ease-in-out;
 }

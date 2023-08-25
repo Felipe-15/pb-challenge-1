@@ -43,7 +43,11 @@
     margin-bottom: 1.8rem;
   }
 
-  .content-container select {
+  .select-container {
+    max-width: 460px;
+  }
+
+  .custom-select {
     margin-bottom: 0;
   }
 
@@ -78,7 +82,7 @@
     margin-top: 1.5rem;
   }
 
-  .content-container select {
+  .custom-select {
     max-width: 460px;
     width: 100%;
     font-size: 2.4rem;
