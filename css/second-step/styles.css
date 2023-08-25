@@ -5,3 +5,9 @@
     max-width: 340px;
   }
 }
+
+@media screen and (min-width: 769px) {
+  .main-container {
+    --gap-amount: 9rem;
+  }
+}
