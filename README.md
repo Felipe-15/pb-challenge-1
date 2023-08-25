@@ -6,11 +6,13 @@ It's a survey of an investment enterprise, with a few forms and steps, made with
 
 ## :computer: How to run
 
-To run the project correctly, you'll need to use some local server like `live server`, `node static server` or `node live server`, due the <strong>project uses es6 imports</strong>, it's only supported by http(s), so if you just directly open the index.html it will not execute the js scripts.
+To run the project correctly, you'll need to use some local server like `live server`, due the <strong>project uses es6 imports</strong>, it's only supported by http(s), so if you just directly open the index.html it will not execute the js scripts.
+
+To make it easier I put a simple http-server package with a simple script, that way you can just run `npm i` and `npm start` at the root of the project and will execute normally in a port, do as you prefer.
 
 ### :exclamation: Observation
 
-In the fourth step page a bug occurs when you focus the textarea if you run the project with 'live server', at least in my version, perhaps it's only occurs with live server, if you try to open the html file directly it won't happen the same problem, probably the cause are the scripts injected by it.
+In the fourth step page a bug occurs when you focus the textarea if you run the project with <strong>live server</strong>, at least in my version, perhaps it's only occurs with live server, if you try to open the html file directly it won't happen the same problem, probably the cause are the scripts injected by it.
 
 ## :page_facing_up: Pages
 
