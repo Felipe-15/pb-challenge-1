@@ -19,3 +19,8 @@
 
   margin-bottom: 2rem;
 }
+
+.buttons-container {
+  justify-content: center;
+  gap: 1.8rem;
+}

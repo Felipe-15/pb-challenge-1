@@ -31,4 +31,8 @@
   .main-container {
     --gap-amount: 8rem;
   }
+
+  .buttons-container {
+    justify-content: space-between;
+  }
 }
