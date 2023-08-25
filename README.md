@@ -10,10 +10,6 @@ To run the project correctly, you'll need to use some local server like `live se
 
 To make it easier I put a simple http-server package with a simple script, that way you can just run `npm i` and `npm start` at the root of the project and will execute normally in a port, do as you prefer.
 
-### :exclamation: Observation
-
-In the fourth step page a bug occurs when you focus the textarea if you run the project with <strong>live server</strong>, at least in my version, perhaps it's only occurs with live server, if you try to open the html file directly it won't happen the same problem, probably the cause are the scripts injected by it.
-
 ## :page_facing_up: Pages
 
 - [x] Welcome
