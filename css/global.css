@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("components/ui-components.css");
 @import url("components/responsiveness.css");
+@import url("animations.css");
 
 :root {
   --primary-color: #3eb25e;
