@@ -13,4 +13,8 @@
   small {
     margin-bottom: 5.2rem;
   }
+
+  .content-container {
+    max-width: 460px;
+  }
 }
