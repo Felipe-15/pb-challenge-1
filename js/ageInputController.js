@@ -5,7 +5,7 @@ ageInput === null || ageInput === void 0 ? void 0 : ageInput.addEventListener("k
         ageInput.value = ageInput.value.slice(0, 2);
         return;
     }
-    if (isNaN(Number(e.key))) {
+    if (isNaN(Number(e.key)) && e.key !== "Backspace") {
         ageInput.value = ageInput.value.slice(ageInput.value.length);
     }
 });
