@@ -11,6 +11,8 @@
   max-width: 95vw;
 
   margin: auto;
+
+  overflow-x: hidden;
 }
 
 .content-container {
