@@ -9,8 +9,9 @@
   }
 
   input {
+    font-size: 2.7rem;
     margin-bottom: 2.7rem;
-    height: 50px;
+    height: 53px;
   }
 
   input[type="number"] {
