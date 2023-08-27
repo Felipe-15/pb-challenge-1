@@ -6,6 +6,7 @@
 :root {
   --primary-color: #3eb25e;
   --secondary-color: #ffff7d;
+  --border-hover-color: #475242;
 }
 
 * {

@@ -39,7 +39,7 @@ input {
 }
 
 input:hover {
-  border-color: #475242;
+  border-color: var(--border-hover-color);
 }
 
 input::placeholder {

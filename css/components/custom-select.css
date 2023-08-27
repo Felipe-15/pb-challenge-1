@@ -23,7 +23,7 @@
 }
 
 .custom-select:hover {
-  border-color: #475242;
+  border-color: var(--border-hover-color);
 }
 
 .custom-arrow {
