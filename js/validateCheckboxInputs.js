@@ -3,25 +3,7 @@ import { getSelectData, setSelectedIndex } from "./checkSelectData.js";
 import { deletePageDataOnSkip } from "./clearDataOnSkip.js";
 const inputs = Array.from(document.getElementsByName("resources"));
 const nextLink = document.getElementById("next-link");
-nextLink === null || nextLink === void 0
-  ? void 0
-  : nextLink.addEventListener("click", finishForm);
-getRecoveredData();
-hasSomeChecked();
-deletePageDataOnSkip("thirdStep");
-inputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    if (inputs.some((input) => input.checked)) {
-      nextLink === null || nextLink === void 0
-        ? void 0
-        : nextLink.classList.remove("button--disabled");
-    } else {
-      nextLink === null || nextLink === void 0
-        ? void 0
-        : nextLink.classList.add("button--disabled");
-    }
-  });
-});
+initiliazePage();
 function hasSomeChecked() {
   if (inputs.some((input) => input.checked)) {
     return nextLink === null || nextLink === void 0
@@ -61,4 +43,25 @@ function getRecoveredData() {
     }
   });
   setSelectedIndex(select);
+}
+function initiliazePage() {
+  getRecoveredData();
+  hasSomeChecked();
+  deletePageDataOnSkip("thirdStep");
+  nextLink === null || nextLink === void 0
+    ? void 0
+    : nextLink.addEventListener("click", finishForm);
+  inputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (inputs.some((input) => input.checked)) {
+        nextLink === null || nextLink === void 0
+          ? void 0
+          : nextLink.classList.remove("button--disabled");
+      } else {
+        nextLink === null || nextLink === void 0
+          ? void 0
+          : nextLink.classList.add("button--disabled");
+      }
+    });
+  });
 }

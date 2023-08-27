@@ -3,19 +3,7 @@ import { deletePageDataOnSkip } from "./clearDataOnSkip.js";
 import { getSelectData, setSelectedIndex } from "./checkSelectData.js";
 const radioInputs = Array.from(document.getElementsByName("financialMarket"));
 const nextLink = document.getElementById("next-link");
-nextLink === null || nextLink === void 0
-  ? void 0
-  : nextLink.addEventListener("click", finishForm);
-radioInputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    nextLink === null || nextLink === void 0
-      ? void 0
-      : nextLink.classList.remove("button--disabled");
-  });
-});
-getRecoveredData();
-getCheckedInput();
-deletePageDataOnSkip("secondStep");
+initializePage();
 function finishForm() {
   const inputRadio = getCheckedInput();
   const selectedIndex = getSelectData();
@@ -57,4 +45,19 @@ function getRecoveredData() {
   nextLink === null || nextLink === void 0
     ? void 0
     : nextLink.classList.remove("button--disabled");
+}
+function initializePage() {
+  getRecoveredData();
+  getCheckedInput();
+  deletePageDataOnSkip("secondStep");
+  nextLink === null || nextLink === void 0
+    ? void 0
+    : nextLink.addEventListener("click", finishForm);
+  radioInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      nextLink === null || nextLink === void 0
+        ? void 0
+        : nextLink.classList.remove("button--disabled");
+    });
+  });
 }

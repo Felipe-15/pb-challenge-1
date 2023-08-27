@@ -8,17 +8,7 @@ const radioInputs = Array.from(
 
 const nextLink = document.getElementById("next-link");
 
-nextLink?.addEventListener("click", finishForm);
-
-radioInputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    nextLink?.classList.remove("button--disabled");
-  });
-});
-
-getRecoveredData();
-getCheckedInput();
-deletePageDataOnSkip("secondStep");
+initializePage();
 
 function finishForm(): void {
   const inputRadio = getCheckedInput();
@@ -64,6 +54,19 @@ function getRecoveredData() {
 
   inputToCheck.checked = true;
   nextLink?.classList.remove("button--disabled");
+}
+
+function initializePage() {
+  getRecoveredData();
+  getCheckedInput();
+  deletePageDataOnSkip("secondStep");
+
+  nextLink?.addEventListener("click", finishForm);
+  radioInputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      nextLink?.classList.remove("button--disabled");
+    });
+  });
 }
 
 export {};

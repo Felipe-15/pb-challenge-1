@@ -25,6 +25,8 @@ const hasData = (): Survey | null => {
   return recoveredData;
 };
 
+// If it's not give a page parameter, it means that the data to be saved it's a object with more data than one page.
+
 export const saveData = (
   data: Survey[keyof Survey] | Survey,
   page?: Pages
@@ -41,6 +43,8 @@ export const saveData = (
     JSON.stringify({ ...recoveredData, [page]: data })
   );
 };
+
+// Differents signatures to match the differents returns, using this strategy makes possible to avoid structures like 'switch' to determine the return value preventing to have a 'runtime' comparison.
 
 function recoverData(page?: "secondStep"): Survey["secondStep"] | null;
 function recoverData(page?: "thirdStep"): Survey["thirdStep"] | null;

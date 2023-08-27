@@ -8,21 +8,7 @@ const inputs = Array.from(
 
 const nextLink = document.getElementById("next-link");
 
-nextLink?.addEventListener("click", finishForm);
-
-getRecoveredData();
-hasSomeChecked();
-deletePageDataOnSkip("thirdStep");
-
-inputs.forEach((input) => {
-  input.addEventListener("change", () => {
-    if (inputs.some((input) => input.checked)) {
-      nextLink?.classList.remove("button--disabled");
-    } else {
-      nextLink?.classList.add("button--disabled");
-    }
-  });
-});
+initiliazePage();
 
 function hasSomeChecked() {
   if (inputs.some((input) => input.checked)) {
@@ -73,6 +59,23 @@ function getRecoveredData() {
   });
 
   setSelectedIndex(select);
+}
+
+function initiliazePage() {
+  getRecoveredData();
+  hasSomeChecked();
+  deletePageDataOnSkip("thirdStep");
+
+  nextLink?.addEventListener("click", finishForm);
+  inputs.forEach((input) => {
+    input.addEventListener("change", () => {
+      if (inputs.some((input) => input.checked)) {
+        nextLink?.classList.remove("button--disabled");
+      } else {
+        nextLink?.classList.add("button--disabled");
+      }
+    });
+  });
 }
 
 export {};
