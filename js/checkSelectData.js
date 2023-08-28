@@ -1,6 +1,4 @@
-const customSelect = document
-    .getElementsByClassName("custom-select")
-    .item(0);
+const customSelect = document.getElementById("custom-select");
 export function getSelectData() {
     console.log(customSelect.selectedIndex);
     return customSelect.selectedIndex;
