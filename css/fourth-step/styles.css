@@ -8,6 +8,7 @@
   .custom-textarea {
     height: 225px;
     font-size: 1.8rem;
+    max-width: 460px;
   }
 
   small {
@@ -15,6 +16,6 @@
   }
 
   .content-container {
-    max-width: 460px;
+    max-width: 500px;
   }
 }
