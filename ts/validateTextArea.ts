@@ -33,28 +33,6 @@ function recoverTextarea() {
   charCounter.innerHTML = `${dataRecovered.value.length}/130`;
 }
 
-function onChangeTextarea() {
-  let length = textarea.value.length;
-  if (!length) {
-    nextLink?.classList.add("button--disabled");
-    charCounter.innerHTML = "0/130";
-
-    return;
-  } else {
-    nextLink?.classList.remove("button--disabled");
-  }
-
-  if (length + 1 > 130) {
-    const currentValue = textarea.value.slice(0, 130);
-    textarea.value = currentValue;
-    charCounter.innerHTML = `${currentValue.length}/130`;
-
-    return;
-  }
-
-  charCounter.innerHTML = `${length}/130`;
-}
-
 function initializePage() {
   nextLink?.addEventListener("click", finishForm);
 
@@ -62,5 +40,11 @@ function initializePage() {
   checkTextarea();
   deletePageDataOnSkip("fourthStep");
 
-  textarea?.addEventListener("keyup", onChangeTextarea);
+  textarea?.addEventListener("keyup", () => {
+    charCounter.innerHTML = `${textarea.value.length}/130`;
+    if (!textarea.value.length)
+      return nextLink?.classList.add("button--disabled");
+
+    return nextLink?.classList.remove("button--disabled");
+  });
 }
